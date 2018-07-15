@@ -1,0 +1,8 @@
+<canvas #myCanvas width="{{platformWidth}}" height="{{platformHeight}}"></canvas>
+<div #tooltip class="tooltip" [ngClass]="{'show': displayPopup}" [ngStyle]="styles">
+  <div class="tooltip-container col-sm-12">
+    <div class="row">{{node?.name}}</div>
+    <div class="row">{{node?.additionalData?.dateOfBirth}}</div>
+    <div class="row">{{node?.additionalData?.email}}</div>
+  </div>
+</div>

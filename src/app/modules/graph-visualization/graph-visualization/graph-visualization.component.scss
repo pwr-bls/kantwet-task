@@ -1,0 +1,30 @@
+.tooltip {
+    visibility: hidden;
+    width: 250px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 8px;
+    position: absolute;
+    z-index: 999999999;
+    &.show {
+        visibility: visible;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: #555 transparent transparent transparent;
+    }
+    .tooltip-container {    
+        min-height: 100px;
+        max-height: 100px;
+        overflow: hidden;
+    }
+
+}

@@ -1,0 +1,21 @@
+<div class="table-visualization">
+  <div class="card border-0">
+    <div class="card-body">
+      <div class="row bg-light">
+        <h5 class="card-title text-dark col-sm-6">Tabele title</h5>
+        <div class="col-sm-3">
+          <sl-search-field [labelText]="'SEARCH_FIELD.LABEL'" (changeSearch)="handleSearchChange($event)"></sl-search-field>
+        </div>
+        <div class="col-sm-3 float-right">
+          <sl-pagination (changePage)="handlePageChange($event)" [setPagination]="pagination$ | async" [previousLabel]="'<'" [nextLabel]="'>'"></sl-pagination>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <sl-data-grid [sortField]="(sort$ | async)?.field" [sortOrder]="(sort$ | async)?.order" (sort)="handleSortChange($event)"
+            (changePage)="handlePageChange($event)" [columns]="columns" [actions]="true" [value]="data$ | async" [pagination]="pagination$ | async"></sl-data-grid>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
